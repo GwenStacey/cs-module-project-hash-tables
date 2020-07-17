@@ -1,5 +1,17 @@
+import re
 def word_count(s):
-    # Your code here
+    counts = {}
+    s = s.translate(str.maketrans({",":"",".":"",'"':''}))
+    s = s.split()
+    for i in s:
+        i = str.lower(i)
+        if i not in counts.keys() and i.islower():
+            counts[i] = 1
+        elif i in counts.keys():
+            counts[i]+=1
+        else:
+            pass
+    return counts
 
 
 
